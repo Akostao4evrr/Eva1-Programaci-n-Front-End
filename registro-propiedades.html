@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Propiedades - PNK Inmobiliaria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-content">
+            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
+                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="form-section">
+            <h1 class="form-heading">CREAR NUEVA PROPIEDAD</h1>
+
+            <form class="form-container" aria-label="Formulario de creación de propiedad">
+                <fieldset class="form-fieldset">
+                    <legend>INFORMACIÓN GENERAL</legend>
+
+                    <div class="form-group">
+                        <label for="codigo">CÓDIGO DE PROPIEDAD</label>
+                        <input 
+                            type="text" 
+                            id="codigo" 
+                            name="codigo" 
+                            required
+                            aria-required="true"
+                            placeholder="P-2026-001"
+                        />
+                        <span class="form-hint">Se generará automáticamente si se deja vacío</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">TIPO DE PROPIEDAD</label>
+                        <select 
+                            id="tipo" 
+                            name="tipo" 
+                            required
+                            aria-required="true"
+                        >
+                            <option value="">-- SELECCIONA UN TIPO --</option>
+                            <option value="casa">CASA</option>
+                            <option value="apartamento">APARTAMENTO</option>
+                            <option value="local">LOCAL COMERCIAL</option>
+                            <option value="oficina">OFICINA</option>
+                            <option value="terreno">TERRENO</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="titulo">TÍTULO O NOMBRE</label>
+                        <input 
+                            type="text" 
+                            id="titulo" 
+                            name="titulo" 
+                            required
+                            aria-required="true"
+                            placeholder="Casa en el norte"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">DESCRIPCIÓN</label>
+                        <textarea 
+                            id="descripcion" 
+                            name="descripcion" 
+                            rows="4"
+                            style="resize: vertical;"
+                            placeholder="Describe las características principales de la propiedad"
+                        ></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>UBICACIÓN</legend>
+
+                    <div class="form-group">
+                        <label for="provincia">PROVINCIA</label>
+                        <select 
+                            id="provincia" 
+                            name="provincia" 
+                            required
+                            aria-required="true"
+                        >
+                            <option value="">-- SELECCIONA --</option>
+                            <option value="santiago">SANTIAGO</option>
+                            <option value="valparaiso">VALPARAÍSO</option>
+                            <option value="biobio">BÍOBÍO</option>
+                            <option value="atacama">ATACAMA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comuna">COMUNA</label>
+                        <select 
+                            id="comuna" 
+                            name="comuna" 
+                            required
+                            aria-required="true"
+                        >
+                            <option value="">-- SELECCIONA --</option>
+                            <option value="santiago">SANTIAGO</option>
+                            <option value="providencia">PROVIDENCIA</option>
+                            <option value="nunoa">ÑUÑOA</option>
+                            <option value="vitacura">VITACURA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calle">CALLE Y NÚMERO</label>
+                        <input 
+                            type="text" 
+                            id="calle" 
+                            name="calle" 
+                            required
+                            aria-required="true"
+                            placeholder="Av. Principal 1234"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sector">SECTOR</label>
+                        <input 
+                            type="text" 
+                            id="sector" 
+                            name="sector" 
+                            placeholder="Nombre del sector o barrio"
+                        />
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>CARACTERÍSTICAS TÉCNICAS</legend>
+
+                    <div class="form-group">
+                        <label for="superficie">SUPERFICIE (M²)</label>
+                        <input 
+                            type="number" 
+                            id="superficie" 
+                            name="superficie" 
+                            required
+                            aria-required="true"
+                            min="0"
+                            placeholder="150"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitaciones">HABITACIONES</label>
+                        <input 
+                            type="number" 
+                            id="habitaciones" 
+                            name="habitaciones" 
+                            required
+                            aria-required="true"
+                            min="0"
+                            placeholder="3"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banos">BAÑOS</label>
+                        <input 
+                            type="number" 
+                            id="banos" 
+                            name="banos" 
+                            required
+                            aria-required="true"
+                            min="0"
+                            placeholder="2"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estacionamientos">ESTACIONAMIENTOS</label>
+                        <input 
+                            type="number" 
+                            id="estacionamientos" 
+                            name="estacionamientos" 
+                            min="0"
+                            placeholder="1"
+                        />
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>INFORMACIÓN FINANCIERA</legend>
+
+                    <div class="form-group">
+                        <label for="precio-uf">PRECIO (UF)</label>
+                        <input 
+                            type="number" 
+                            id="precio-uf" 
+                            name="precio-uf" 
+                            required
+                            aria-required="true"
+                            min="0"
+                            step="0.1"
+                            placeholder="5000"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="precio-clp">PRECIO (CLP)</label>
+                        <input 
+                            type="number" 
+                            id="precio-clp" 
+                            name="precio-clp" 
+                            required
+                            aria-required="true"
+                            min="0"
+                            placeholder="150000000"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado">ESTADO</label>
+                        <select 
+                            id="estado" 
+                            name="estado" 
+                            required
+                            aria-required="true"
+                        >
+                            <option value="disponible" selected>DISPONIBLE</option>
+                            <option value="vendido">VENDIDO</option>
+                            <option value="arrendado">ARRENDADO</option>
+                            <option value="bloqueado">BLOQUEADO</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">CREAR PROPIEDAD</button>
+
+                <div class="form-footer">
+                    <p><a href="dashboard.html">Volver al Dashboard</a></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-section">
+            <address>
+                <strong>PNK INMOBILIARIA</strong><br/>
+                Somos una plataforma inmobiliaria moderna<br/>
+                que conecta propietarios y gestores<br/>
+                de forma eficiente y transparente.
+            </address>
+        </div>
+
+        <div class="footer-section">
+            <h3>CONTACTO</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>📧 info@pnkinmobiliaria.cl</li>
+                <li>📱 +56 9 1234 5678</li>
+                <li>📍 Santiago, Chile</li>
+                <li>🕐 Lun - Vie: 9:00 - 18:00</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>LEGAL</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#privacidad">Política de Privacidad</a></li>
+                <li><a href="#terminos">Términos de Servicio</a></li>
+                <li><a href="#cookies">Política de Cookies</a></li>
+                <li><a href="#accesibilidad">Accesibilidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Propiedad creada exitosamente. Funcionalidad será integrada con backend próximamente.');
+        });
+    </script>
+</body>
+</html>

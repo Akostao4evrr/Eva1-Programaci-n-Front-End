@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PNK INMOBILIARIA - Registro de Gestor.">
+    <title>REGISTRO GESTOR | PNK INMOBILIARIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-content">
+            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
+                <li><a href="index.html#contacto">CONTACTO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="form-section" aria-labelledby="form-title">
+            <h1 id="form-title" class="form-heading">REGISTRO GESTOR INMOBILIARIO</h1>
+            
+            <form method="post" action="#" class="form-container" aria-label="Formulario de registro de gestor">
+                <fieldset class="form-fieldset">
+                    <legend>INFORMACIÓN PERSONAL</legend>
+
+                    <div class="form-group">
+                        <label for="rut">RUT</label>
+                        <input 
+                            type="text" 
+                            id="rut" 
+                            name="rut" 
+                            placeholder="XX.XXX.XXX-X" 
+                            required
+                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]"
+                            aria-describedby="rut-help">
+                        <span id="rut-help" class="form-hint">Formato: XX.XXX.XXX-X</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE COMPLETO</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-nacimiento">FECHA DE NACIMIENTO</label>
+                        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">CORREO ELECTRÓNICO</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">TELÉFONO</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo">SEXO</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registro-bienes">Nº REGISTRO DE BIENES RAÍCES</label>
+                        <input type="text" id="registro-bienes" name="registro-bienes" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certificado">CERTIFICADO DE ANTECEDENTES</label>
+                        <input 
+                            type="file" 
+                            id="certificado" 
+                            name="certificado" 
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                            aria-describedby="file-help">
+                        <span id="file-help" class="form-hint">Formatos: PDF, JPG, PNG</span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>CREDENCIALES DE ACCESO</legend>
+
+                    <div class="form-group">
+                        <label for="password">CONTRASEÑA</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            minlength="8" 
+                            required
+                            aria-describedby="password-help">
+                        <span id="password-help" class="form-hint">Mínimo 8 caracteres</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">CONFIRMAR CONTRASEÑA</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">REGISTRAR</button>
+                <p class="form-footer">
+                    ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PNK INMOBILIARIA</h3>
+                <address>
+                    <p>Calle Principal 123, La Serena</p>
+                    <p>Región de Coquimbo, Chile</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p><a href="mailto:contacto@pnkinmobiliaria.cl">contacto@pnkinmobiliaria.cl</a></p>
+                <p><a href="tel:+56511234567">+56 51 123 4567</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>INFORMACIÓN</h4>
+                <p>&copy; 2026 PNK INMOBILIARIA. Región de Coquimbo.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

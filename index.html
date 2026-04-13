@@ -1,105 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="EcoEstilo - Tu tienda de ropa de segunda mano. Moda sostenible y vintage a los mejores precios.">
-    <title>EcoEstilo | Tienda de Ropa de Segunda Mano</title>
+    <meta name="description" content="PNK INMOBILIARIA - Gestión de propiedades en la Región de Coquimbo.">
+    <title>PNK INMOBILIARIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <!-- Encabezado principal del sitio -->
-    <header>
-        <h1>EcoEstilo</h1>
-        <p>Moda circular, sostenible y con historia.</p>
-    </header>
-
-    <!-- Navegación principal -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#nosotros">Sobre Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-content">
+            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <ul class="nav-links">
+                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
+                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Contenido principal de la página -->
     <main>
-        <!-- Sección de introducción -->
-        <section id="inicio">
-            <h2>Dale una segunda vida a la ropa</h2>
-            <p>Descubre prendas únicas, reduce tu huella de carbono y viste con estilo apoyando la moda sostenible.</p>
+        <section class="search-section" aria-labelledby="search-title">
+            <h2 id="search-title" class="visually-hidden">Búsqueda de Propiedades</h2>
+            <form class="search-form" method="get" action="#">
+                <div class="search-grid">
+                    <div class="search-field">
+                        <label for="provincia">PROVINCIA</label>
+                        <select id="provincia" name="provincia" required>
+                            <option value="">Seleccionar</option>
+                            <option value="elqui">Elqui</option>
+                            <option value="limari">Limarí</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="comuna">COMUNA</label>
+                        <select id="comuna" name="comuna" required>
+                            <option value="">Seleccionar</option>
+                            <option value="la-serena">La Serena</option>
+                            <option value="coquimbo">Coquimbo</option>
+                            <option value="ovalle">Ovalle</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="sector">SECTOR</label>
+                        <input type="text" id="sector" name="sector" placeholder="Centro, Playa, etc.">
+                    </div>
+                </div>
+                <button type="submit" class="btn-search">BUSCAR</button>
+            </form>
         </section>
 
-        <!-- Sección del catálogo con artículos independientes -->
-        <section id="catalogo">
-            <h2>Últimas Novedades Vintage</h2>
-
-            <div class="grid-catalogo">
-                <!-- Artículo 1 -->
-                <article>
-                    <header>
-                        <h3>Chaqueta Vaquera Retro</h3>
-                    </header>
-                    <figure>
-                        <!-- Se usa figure y figcaption para dar significado semántico a la imagen -->
-                        <img src="chaqueta-vaquera.jpg" alt="Chaqueta vaquera azul estilo años 90" width="300"
-                            height="400">
-                        <figcaption>Chaqueta Levis - Años 90</figcaption>
-                    </figure>
-                    <p>Una chaqueta clásica en perfecto estado. Ideal para el entretiempo.</p>
-                    <p><strong>Precio:</strong> 25.00 €</p>
-                    <footer>
-                        <button>Añadir al carrito</button>
-                    </footer>
+        <section class="properties-section" aria-labelledby="properties-title">
+            <h2 id="properties-title" class="section-title">PROPIEDADES</h2>
+            <div class="properties-grid">
+                <!-- Propiedad 1 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.proppit.com/properties/42407880-89d2-4740-9ad0-0ba69c473cf5/9d8712d1-e785-4d09-86cc-c2500fb14371.bin" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Casa en La Serena">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-001</span>
+                            <span class="property-type">CASA</span>
+                        </div>
+                        <h3 class="property-location">La Serena, Región de Coquimbo</h3>
+                        <p class="property-price">150 UF / $4.500.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
                 </article>
 
-                <!-- Artículo 2 -->
-                <article>
-                    <header>
-                        <h3>Vestido Floral de Verano</h3>
-                    </header>
-                    <figure>
-                        <img src="vestido-floral.jpg" alt="Vestido floral amarillo y blanco" width="300" height="400">
-                        <figcaption>Vestido de algodón orgánico - Talla M</figcaption>
-                    </figure>
-                    <p>Vestido fresco y ligero, rescatado y restaurado para ti.</p>
-                    <p><strong>Precio:</strong> 15.00 €</p>
-                    <footer>
-                        <button>Añadir al carrito</button>
-                    </footer>
+                <!-- Propiedad 2 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://ppartnersgroup.com/_next/image/?url=https:%2F%2Fassets.easybroker.com%2Fproperty_images%2F3674208%2F60018068%2FEB-NC4208.jpg%3Fversion%3D1681416439&w=1920&q=75" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Departamento en Coquimbo">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-002</span>
+                            <span class="property-type">DEPARTAMENTO</span>
+                        </div>
+                        <h3 class="property-location">Coquimbo, Región de Coquimbo</h3>
+                        <p class="property-price">80 UF / $2.400.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
+                </article>
+
+                <!-- Propiedad 3 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://www.dlpropiedades.cl/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-23-at-13.05.20-1.jpeg" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Terreno en Ovalle">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-003</span>
+                            <span class="property-type">TERRENO</span>
+                        </div>
+                        <h3 class="property-location">Ovalle, Región de Coquimbo</h3>
+                        <p class="property-price">50 UF / $1.500.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
+                </article>
+
+                <!-- Propiedad 4 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/36/6f/1e/1120283064.jpg" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Casa en La Serena">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-004</span>
+                            <span class="property-type">CASA</span>
+                        </div>
+                        <h3 class="property-location">La Serena, Región de Coquimbo</h3>
+                        <p class="property-price">200 UF / $6.000.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
+                </article>
+
+                <!-- Propiedad 5 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1216711281148310913/original/b2fd2e86-65ae-4de3-8c0b-d962ae36eb5f.jpeg?im_w=1200" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Departamento en Coquimbo">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-005</span>
+                            <span class="property-type">DEPARTAMENTO</span>
+                        </div>
+                        <h3 class="property-location">Coquimbo, Región de Coquimbo</h3>
+                        <p class="property-price">95 UF / $2.850.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
+                </article>
+
+                <!-- Propiedad 6 -->
+                <article class="property-card">
+                    <div class="property-image">
+                        <img src="https://cf.chilepropiedades.cl/imagenes/publicacion/venta/terreno/ovalle/1/c3956d3ebf0946ba8a4c6c456d7cb7f7.jpeg" width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3C/svg%3E" alt="Terreno en Ovalle">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">COD-006</span>
+                            <span class="property-type">TERRENO</span>
+                        </div>
+                        <h3 class="property-location">Ovalle, Región de Coquimbo</h3>
+                        <p class="property-price">75 UF / $2.250.000</p>
+                        <a href="#" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
+                    </div>
                 </article>
             </div>
         </section>
-
-        <!-- Sección de información sobre la tienda -->
-        <section id="nosotros">
-            <h2>¿Por qué comprar de segunda mano?</h2>
-            <p>La industria de la moda es una de las más contaminantes del mundo. En EcoEstilo, creemos en un modelo
-                circular donde la ropa de calidad perdura por generaciones.</p>
-        </section>
     </main>
 
-    <!-- Contenido complementario (Promociones, enlaces rápidos, etc.) -->
-    <aside>
-        <h3>Promoción del Mes</h3>
-        <p>Trae 3 prendas que ya no uses y obtén un <strong>20% de descuento</strong> en tu próxima compra.</p>
-    </aside>
-
-    <!-- Pie de página con información de contacto, derechos y dirección -->
-    <footer id="contacto">
-        <address>
-            <p>Encuéntranos en: Calle de la Sostenibilidad 123, Ciudad Verde</p>
-            <p>Email: <a href="mailto:hola@ecoestilo.com">hola@ecoestilo.com</a></p>
-        </address>
-        <p>&copy; 2023 EcoEstilo - Tienda de ropa de segunda mano. Todos los derechos reservados.</p>
+    <footer id="contacto" class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PNK INMOBILIARIA</h3>
+                <address>
+                    <p>Calle Principal 123, La Serena</p>
+                    <p>Región de Coquimbo, Chile</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p><a href="mailto:contacto@pnkinmobiliaria.cl">contacto@pnkinmobiliaria.cl</a></p>
+                <p><a href="tel:+56511234567">+56 51 123 4567</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>INFORMACIÓN</h4>
+                <p>&copy; 2026 PNK INMOBILIARIA. Región de Coquimbo.</p>
+            </div>
+        </div>
     </footer>
-
 </body>
-
 </html>

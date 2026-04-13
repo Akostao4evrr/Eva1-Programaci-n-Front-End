@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - PNK Inmobiliaria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-content">
+            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
+                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="login.html" class="active">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="form-section">
+            <h1 class="form-heading">INICIAR SESIÓN</h1>
+
+            <form class="form-container" aria-label="Formulario de inicio de sesión">
+                <fieldset class="form-fieldset">
+                    <legend>CREDENCIALES DE ACCESO</legend>
+
+                    <div class="form-group">
+                        <label for="email">CORREO ELECTRÓNICO</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            aria-required="true"
+                            placeholder="correo@ejemplo.com"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">CONTRASEÑA</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required
+                            aria-required="true"
+                            minlength="8"
+                            placeholder="Mínimo 8 caracteres"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="checkbox" 
+                            id="remember-me" 
+                            name="remember-me"
+                            style="width: auto; height: auto; margin-right: 8px; cursor: pointer;"
+                        />
+                        <label for="remember-me" style="margin-bottom: 0; display: inline; font-weight: 400; text-transform: none;">Recuérdame en este navegador</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">INICIA SESIÓN</button>
+
+                <div class="form-footer">
+                    <p>¿No tienes cuenta? <a href="registro-propietario.html">Registrate como Propietario</a> o <a href="registro-gestor.html">como Gestor</a></p>
+                    <p><a href="#recuperar" onclick="mostrarRecuperacion(event)">¿Olvidaste tu contraseña?</a></p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Password Recovery Section (Hidden by default) -->
+        <section class="form-section" id="recuperar-section" style="display: none;">
+            <h1 class="form-heading">RECUPERAR CONTRASEÑA</h1>
+
+            <form class="form-container" aria-label="Formulario de recuperación de contraseña">
+                <fieldset class="form-fieldset">
+                    <legend>CORREO ELECTRÓNICO</legend>
+
+                    <div class="form-group">
+                        <label for="email-recuperar">CORREO REGISTRADO</label>
+                        <input 
+                            type="email" 
+                            id="email-recuperar" 
+                            name="email-recuperar" 
+                            required
+                            aria-required="true"
+                            placeholder="correo@ejemplo.com"
+                        />
+                    </div>
+
+                    <span class="form-hint">Enviaremos un enlace de recuperación a tu correo electrónico</span>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">ENVIAR ENLACE DE RECUPERACIÓN</button>
+
+                <div class="form-footer">
+                    <p><a href="#login" onclick="mostrarLogin(event)">Volver al inicio de sesión</a></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-section">
+            <address>
+                <strong>PNK INMOBILIARIA</strong><br/>
+                Somos una plataforma inmobiliaria moderna<br/>
+                que conecta propietarios y gestores<br/>
+                de forma eficiente y transparente.
+            </address>
+        </div>
+
+        <div class="footer-section">
+            <h3>CONTACTO</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>📧 info@pnkinmobiliaria.cl</li>
+                <li>📱 +56 9 1234 5678</li>
+                <li>📍 Santiago, Chile</li>
+                <li>🕐 Lun - Vie: 9:00 - 18:00</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>LEGAL</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#privacidad">Política de Privacidad</a></li>
+                <li><a href="#terminos">Términos de Servicio</a></li>
+                <li><a href="#cookies">Política de Cookies</a></li>
+                <li><a href="#accesibilidad">Accesibilidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarRecuperacion(e) {
+            e.preventDefault();
+            document.querySelector('section:not(#recuperar-section)').style.display = 'none';
+            document.getElementById('recuperar-section').style.display = 'block';
+        }
+
+        function mostrarLogin(e) {
+            e.preventDefault();
+            document.getElementById('recuperar-section').style.display = 'none';
+            document.querySelector('section:not(#recuperar-section)').style.display = 'block';
+        }
+
+        // Form submit handlers
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Funcionalidad será integrada con backend próximamente.');
+            });
+        });
+    </script>
+</body>
+</html>

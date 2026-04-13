@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PNK INMOBILIARIA - Dashboard Administrativo.">
+    <title>DASHBOARD | PNK INMOBILIARIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-content">
+            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
+                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="login.html">LOGOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <section class="dashboard-section" aria-labelledby="users-title">
+            <h2 id="users-title" class="section-title">MANTENEDOR DE USUARIOS</h2>
+            <div class="table-wrapper">
+                <table role="table" aria-label="Tabla de usuarios registrados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>EMAIL</th>
+                            <th>ROL</th>
+                            <th>FECHA REGISTRO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Juan Pérez García</td>
+                            <td><a href="mailto:juan@example.com">juan@example.com</a></td>
+                            <td>PROPIETARIO</td>
+                            <td>2026-01-15</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar usuario Juan Pérez García">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>María López Torres</td>
+                            <td><a href="mailto:maria@example.com">maria@example.com</a></td>
+                            <td>GESTOR</td>
+                            <td>2026-01-20</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar usuario María López Torres">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Carlos Rodríguez Flores</td>
+                            <td><a href="mailto:carlos@example.com">carlos@example.com</a></td>
+                            <td>PROPIETARIO</td>
+                            <td>2026-02-01</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-add" aria-label="Agregar nuevo usuario">AGREGAR USUARIO</button>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="properties-title">
+            <h2 id="properties-title" class="section-title">MANTENEDOR DE PROPIEDADES</h2>
+            <div class="table-wrapper">
+                <table role="table" aria-label="Tabla de propiedades registradas">
+                    <thead>
+                        <tr>
+                            <th>COD</th>
+                            <th>TIPO</th>
+                            <th>UBICACIÓN</th>
+                            <th>PROVINCIA</th>
+                            <th>PRECIO (UF)</th>
+                            <th>PROPIETARIO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COD-001</td>
+                            <td>CASA</td>
+                            <td>Av. del Mar 123</td>
+                            <td>ELQUI</td>
+                            <td>150</td>
+                            <td>Juan Pérez García</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar propiedad COD-001">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar propiedad COD-001">ELIMINAR</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>COD-002</td>
+                            <td>DEPARTAMENTO</td>
+                            <td>Calle Principal 456</td>
+                            <td>ELQUI</td>
+                            <td>80</td>
+                            <td>María López Torres</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar propiedad COD-002">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar propiedad COD-002">ELIMINAR</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>COD-003</td>
+                            <td>TERRENO</td>
+                            <td>Sector Sur, s/n</td>
+                            <td>LIMARÍ</td>
+                            <td>50</td>
+                            <td>Carlos Rodríguez Flores</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar propiedad COD-003">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar propiedad COD-003">ELIMINAR</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>COD-004</td>
+                            <td>CASA</td>
+                            <td>Pasaje Los Andes 789</td>
+                            <td>ELQUI</td>
+                            <td>200</td>
+                            <td>Juan Pérez García</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar propiedad COD-004">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar propiedad COD-004">ELIMINAR</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-add" aria-label="Agregar nueva propiedad">AGREGAR PROPIEDAD</button>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PNK INMOBILIARIA</h3>
+                <address>
+                    <p>Calle Principal 123, La Serena</p>
+                    <p>Región de Coquimbo, Chile</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p><a href="mailto:contacto@pnkinmobiliaria.cl">contacto@pnkinmobiliaria.cl</a></p>
+                <p><a href="tel:+56511234567">+56 51 123 4567</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>INFORMACIÓN</h4>
+                <p>&copy; 2026 PNK INMOBILIARIA. Región de Coquimbo.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
