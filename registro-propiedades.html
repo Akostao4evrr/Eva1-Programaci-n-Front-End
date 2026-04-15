@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="navbar-content">
-            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <a href="index.html" class="brand">PNK INMOBILIARIA</a>
             <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
-                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="registro-usuarios.html">REGISTRARSE</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
                 <li><a href="login.html">LOGIN</a></li>
             </ul>
@@ -33,25 +34,14 @@
 
                     <div class="form-group">
                         <label for="codigo">CÓDIGO DE PROPIEDAD</label>
-                        <input 
-                            type="text" 
-                            id="codigo" 
-                            name="codigo" 
-                            required
-                            aria-required="true"
-                            placeholder="P-2026-001"
-                        />
+                        <input type="text" id="codigo" name="codigo" required aria-required="true"
+                            placeholder="P-2026-001" />
                         <span class="form-hint">Se generará automáticamente si se deja vacío</span>
                     </div>
 
                     <div class="form-group">
                         <label for="tipo">TIPO DE PROPIEDAD</label>
-                        <select 
-                            id="tipo" 
-                            name="tipo" 
-                            required
-                            aria-required="true"
-                        >
+                        <select id="tipo" name="tipo" required aria-required="true">
                             <option value="">-- SELECCIONA UN TIPO --</option>
                             <option value="casa">CASA</option>
                             <option value="apartamento">APARTAMENTO</option>
@@ -63,25 +53,14 @@
 
                     <div class="form-group">
                         <label for="titulo">TÍTULO O NOMBRE</label>
-                        <input 
-                            type="text" 
-                            id="titulo" 
-                            name="titulo" 
-                            required
-                            aria-required="true"
-                            placeholder="Casa en el norte"
-                        />
+                        <input type="text" id="titulo" name="titulo" required aria-required="true"
+                            placeholder="Casa en el norte" />
                     </div>
 
                     <div class="form-group">
                         <label for="descripcion">DESCRIPCIÓN</label>
-                        <textarea 
-                            id="descripcion" 
-                            name="descripcion" 
-                            rows="4"
-                            style="resize: vertical;"
-                            placeholder="Describe las características principales de la propiedad"
-                        ></textarea>
+                        <textarea id="descripcion" name="descripcion" rows="4" style="resize: vertical;"
+                            placeholder="Describe las características principales de la propiedad"></textarea>
                     </div>
                 </fieldset>
 
@@ -90,12 +69,7 @@
 
                     <div class="form-group">
                         <label for="provincia">PROVINCIA</label>
-                        <select 
-                            id="provincia" 
-                            name="provincia" 
-                            required
-                            aria-required="true"
-                        >
+                        <select id="provincia" name="provincia" required aria-required="true">
                             <option value="">-- SELECCIONA --</option>
                             <option value="santiago">SANTIAGO</option>
                             <option value="valparaiso">VALPARAÍSO</option>
@@ -106,12 +80,7 @@
 
                     <div class="form-group">
                         <label for="comuna">COMUNA</label>
-                        <select 
-                            id="comuna" 
-                            name="comuna" 
-                            required
-                            aria-required="true"
-                        >
+                        <select id="comuna" name="comuna" required aria-required="true">
                             <option value="">-- SELECCIONA --</option>
                             <option value="santiago">SANTIAGO</option>
                             <option value="providencia">PROVIDENCIA</option>
@@ -122,24 +91,13 @@
 
                     <div class="form-group">
                         <label for="calle">CALLE Y NÚMERO</label>
-                        <input 
-                            type="text" 
-                            id="calle" 
-                            name="calle" 
-                            required
-                            aria-required="true"
-                            placeholder="Av. Principal 1234"
-                        />
+                        <input type="text" id="calle" name="calle" required aria-required="true"
+                            placeholder="Av. Principal 1234" />
                     </div>
 
                     <div class="form-group">
                         <label for="sector">SECTOR</label>
-                        <input 
-                            type="text" 
-                            id="sector" 
-                            name="sector" 
-                            placeholder="Nombre del sector o barrio"
-                        />
+                        <input type="text" id="sector" name="sector" placeholder="Nombre del sector o barrio" />
                     </div>
                 </fieldset>
 
@@ -148,52 +106,25 @@
 
                     <div class="form-group">
                         <label for="superficie">SUPERFICIE (M²)</label>
-                        <input 
-                            type="number" 
-                            id="superficie" 
-                            name="superficie" 
-                            required
-                            aria-required="true"
-                            min="0"
-                            placeholder="150"
-                        />
+                        <input type="number" id="superficie" name="superficie" required aria-required="true" min="0"
+                            placeholder="150" />
                     </div>
 
                     <div class="form-group">
                         <label for="habitaciones">HABITACIONES</label>
-                        <input 
-                            type="number" 
-                            id="habitaciones" 
-                            name="habitaciones" 
-                            required
-                            aria-required="true"
-                            min="0"
-                            placeholder="3"
-                        />
+                        <input type="number" id="habitaciones" name="habitaciones" required aria-required="true" min="0"
+                            placeholder="3" />
                     </div>
 
                     <div class="form-group">
                         <label for="banos">BAÑOS</label>
-                        <input 
-                            type="number" 
-                            id="banos" 
-                            name="banos" 
-                            required
-                            aria-required="true"
-                            min="0"
-                            placeholder="2"
-                        />
+                        <input type="number" id="banos" name="banos" required aria-required="true" min="0"
+                            placeholder="2" />
                     </div>
 
                     <div class="form-group">
                         <label for="estacionamientos">ESTACIONAMIENTOS</label>
-                        <input 
-                            type="number" 
-                            id="estacionamientos" 
-                            name="estacionamientos" 
-                            min="0"
-                            placeholder="1"
-                        />
+                        <input type="number" id="estacionamientos" name="estacionamientos" min="0" placeholder="1" />
                     </div>
                 </fieldset>
 
@@ -202,39 +133,19 @@
 
                     <div class="form-group">
                         <label for="precio-uf">PRECIO (UF)</label>
-                        <input 
-                            type="number" 
-                            id="precio-uf" 
-                            name="precio-uf" 
-                            required
-                            aria-required="true"
-                            min="0"
-                            step="0.1"
-                            placeholder="5000"
-                        />
+                        <input type="number" id="precio-uf" name="precio-uf" required aria-required="true" min="0"
+                            step="0.1" placeholder="5000" />
                     </div>
 
                     <div class="form-group">
                         <label for="precio-clp">PRECIO (CLP)</label>
-                        <input 
-                            type="number" 
-                            id="precio-clp" 
-                            name="precio-clp" 
-                            required
-                            aria-required="true"
-                            min="0"
-                            placeholder="150000000"
-                        />
+                        <input type="number" id="precio-clp" name="precio-clp" required aria-required="true" min="0"
+                            placeholder="150000000" />
                     </div>
 
                     <div class="form-group">
                         <label for="estado">ESTADO</label>
-                        <select 
-                            id="estado" 
-                            name="estado" 
-                            required
-                            aria-required="true"
-                        >
+                        <select id="estado" name="estado" required aria-required="true">
                             <option value="disponible" selected>DISPONIBLE</option>
                             <option value="vendido">VENDIDO</option>
                             <option value="arrendado">ARRENDADO</option>
@@ -255,9 +166,9 @@
     <footer class="footer">
         <div class="footer-section">
             <address>
-                <strong>PNK INMOBILIARIA</strong><br/>
-                Somos una plataforma inmobiliaria moderna<br/>
-                que conecta propietarios y gestores<br/>
+                <strong>PNK INMOBILIARIA</strong><br />
+                Somos una plataforma inmobiliaria moderna<br />
+                que conecta propietarios y gestores<br />
                 de forma eficiente y transparente.
             </address>
         </div>
@@ -284,10 +195,11 @@
     </footer>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('Propiedad creada exitosamente. Funcionalidad será integrada con backend próximamente.');
         });
     </script>
 </body>
+
 </html>

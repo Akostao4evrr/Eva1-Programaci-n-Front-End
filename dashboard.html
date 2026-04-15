@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="navbar-content">
-            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <a href="index.html" class="brand">PNK INMOBILIARIA</a>
             <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
-                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="registro-usuarios.html">REGISTRARSE</a></li>
                 <li><a href="login.html">LOGOUT</a></li>
             </ul>
         </div>
@@ -25,7 +26,7 @@
 
     <main class="dashboard-main">
         <section class="dashboard-section" aria-labelledby="users-title">
-            <h2 id="users-title" class="section-title">MANTENEDOR DE USUARIOS</h2>
+            <h2 id="users-title" class="section-title">MANTENEDOR DE USUARIOS (Administrador)</h2>
             <div class="table-wrapper">
                 <table role="table" aria-label="Tabla de usuarios registrados">
                     <thead>
@@ -47,7 +48,8 @@
                             <td>2026-01-15</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar usuario Juan Pérez García">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
+                                <button class="btn-action"
+                                    aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
                             </td>
                         </tr>
                         <tr>
@@ -57,8 +59,10 @@
                             <td>GESTOR</td>
                             <td>2026-01-20</td>
                             <td class="actions-cell">
-                                <button class="btn-action" aria-label="Editar usuario María López Torres">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
+                                <button class="btn-action"
+                                    aria-label="Editar usuario María López Torres">EDITAR</button>
+                                <button class="btn-action"
+                                    aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
                             </td>
                         </tr>
                         <tr>
@@ -68,8 +72,10 @@
                             <td>PROPIETARIO</td>
                             <td>2026-02-01</td>
                             <td class="actions-cell">
-                                <button class="btn-action" aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
+                                <button class="btn-action"
+                                    aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
+                                <button class="btn-action"
+                                    aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
                             </td>
                         </tr>
                     </tbody>
@@ -170,4 +176,5 @@
         </div>
     </footer>
 </body>
+
 </html>

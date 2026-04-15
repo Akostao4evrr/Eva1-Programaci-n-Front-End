@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuarios - PNK Inmobiliaria</title>
+    <title>Registro de Usuario - PNK Inmobiliaria</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="navbar-content">
-            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <a href="index.html" class="brand">PNK INMOBILIARIA</a>
             <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="registro-propietario.html">REGISTRO PROPIETARIO</a></li>
-                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="registro-usuarios.html" class="active">REGISTRARSE</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
                 <li><a href="login.html">LOGIN</a></li>
             </ul>
@@ -25,74 +26,70 @@
     <!-- Main Content -->
     <main>
         <section class="form-section">
-            <h1 class="form-heading">CREAR NUEVO USUARIO</h1>
+            <h1 class="form-heading">REGISTRO DE USUARIO</h1>
 
-            <form class="form-container" aria-label="Formulario de creación de usuario">
+            <form class="form-container" aria-label="Formulario de registro de usuario">
                 <fieldset class="form-fieldset">
-                    <legend>INFORMACIÓN DEL USUARIO</legend>
+                    <legend>TIPO DE USUARIO</legend>
+                    <div class="form-group">
+                        <div>
+                            <input type="radio" id="tipo-propietario" name="tipo" value="propietario" required>
+                            <label for="tipo-propietario">Registrarme como PROPIETARIO</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="tipo-gestor" name="tipo" value="gestor">
+                            <label for="tipo-gestor">Registrarme como GESTOR INMOBILIARIO FREE</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>INFORMACIÓN PERSONAL</legend>
+
+                    <div class="form-group">
+                        <label for="rut">RUT</label>
+                        <input type="text" id="rut" name="rut" placeholder="XX.XXX.XXX-X" required
+                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]">
+                    </div>
 
                     <div class="form-group">
                         <label for="nombre">NOMBRE COMPLETO</label>
-                        <input 
-                            type="text" 
-                            id="nombre" 
-                            name="nombre" 
-                            required
-                            aria-required="true"
-                            placeholder="Juan Pérez García"
-                        />
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-nacimiento">FECHA DE NACIMIENTO</label>
+                        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">CORREO ELECTRÓNICO</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required
-                            aria-required="true"
-                            placeholder="usuario@ejemplo.com"
-                        />
+                        <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="rol">ROL</label>
-                        <select 
-                            id="rol" 
-                            name="rol" 
-                            required
-                            aria-required="true"
-                        >
-                            <option value="">-- SELECCIONA UN ROL --</option>
-                            <option value="propietario">PROPIETARIO</option>
-                            <option value="gestor">GESTOR INMOBILIARIO</option>
-                            <option value="administrador">ADMINISTRADOR</option>
-                            <option value="moderador">MODERADOR</option>
+                        <label for="telefono">TELÉFONO MÓVIL</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo">SEXO</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="teléfono">TELÉFONO</label>
-                        <input 
-                            type="text" 
-                            id="teléfono" 
-                            name="teléfono" 
-                            placeholder="+56 9 1234 5678"
-                        />
+                    <div class="form-group" id="propiedad-group" style="display: none;">
+                        <label for="registro-bienes">N° DE LA PROPIEDAD SEGÚN REGISTRO DE BIENES RAÍCES</label>
+                        <input type="text" id="registro-bienes" name="registro-bienes">
                     </div>
 
-                    <div class="form-group">
-                        <label for="estado">ESTADO</label>
-                        <select 
-                            id="estado" 
-                            name="estado" 
-                            required
-                            aria-required="true"
-                        >
-                            <option value="activo" selected>ACTIVO</option>
-                            <option value="inactivo">INACTIVO</option>
-                            <option value="suspendido">SUSPENDIDO</option>
-                        </select>
+                    <div class="form-group" id="certificado-group" style="display: none;">
+                        <label for="certificado">CERTIFICADO DE ANTECEDENTES</label>
+                        <input type="file" id="certificado" name="certificado" accept=".pdf,.jpg,.jpeg,.png">
                     </div>
                 </fieldset>
 
@@ -100,76 +97,70 @@
                     <legend>CREDENCIALES DE ACCESO</legend>
 
                     <div class="form-group">
-                        <label for="password">CONTRASEÑA TEMPORAL</label>
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
-                            required
-                            aria-required="true"
-                            minlength="8"
-                            placeholder="Mínimo 8 caracteres"
-                        />
-                        <span class="form-hint">El usuario deberá cambiar esta contraseña en su primer acceso</span>
+                        <label for="password">CONTRASEÑA</label>
+                        <input type="password" id="password" name="password" minlength="8" required>
                     </div>
 
                     <div class="form-group">
-                        <input 
-                            type="checkbox" 
-                            id="enviar-email" 
-                            name="enviar-email"
-                            checked
-                            style="width: auto; height: auto; margin-right: 8px; cursor: pointer;"
-                        />
-                        <label for="enviar-email" style="margin-bottom: 0; display: inline; font-weight: 400; text-transform: none;">Enviar credenciales por correo electrónico</label>
+                        <label for="confirm-password">CONFIRMAR CONTRASEÑA</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn-submit">CREAR USUARIO</button>
+                <button type="submit" class="btn-submit">REGISTRARME</button>
 
                 <div class="form-footer">
-                    <p><a href="dashboard.html">Volver al Dashboard</a></p>
+                    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
                 </div>
             </form>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-section">
-            <address>
-                <strong>PNK INMOBILIARIA</strong><br/>
-                Somos una plataforma inmobiliaria moderna<br/>
-                que conecta propietarios y gestores<br/>
-                de forma eficiente y transparente.
-            </address>
-        </div>
-
-        <div class="footer-section">
-            <h3>CONTACTO</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li>📧 info@pnkinmobiliaria.cl</li>
-                <li>📱 +56 9 1234 5678</li>
-                <li>📍 Santiago, Chile</li>
-                <li>🕐 Lun - Vie: 9:00 - 18:00</li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>LEGAL</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="#privacidad">Política de Privacidad</a></li>
-                <li><a href="#terminos">Términos de Servicio</a></li>
-                <li><a href="#cookies">Política de Cookies</a></li>
-                <li><a href="#accesibilidad">Accesibilidad</a></li>
-            </ul>
+    <footer id="contacto" class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PNK INMOBILIARIA</h3>
+                <address>
+                    <p>Calle Principal 123, La Serena</p>
+                    <p>Región de Coquimbo, Chile</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p><a href="mailto:contacto@pnkinmobiliaria.cl">contacto@pnkinmobiliaria.cl</a></p>
+                <p><a href="tel:+56511234567">+56 51 123 4567</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>INFORMACIÓN</h4>
+                <p>&copy; 2026 PNK INMOBILIARIA. Región de Coquimbo.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelectorAll('input[name="tipo"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                const propiedadGroup = document.getElementById('propiedad-group');
+                const certificadoGroup = document.getElementById('certificado-group');
+                if (this.value === 'propietario') {
+                    propiedadGroup.style.display = 'block';
+                    certificadoGroup.style.display = 'none';
+                    document.getElementById('registro-bienes').required = true;
+                    document.getElementById('certificado').required = false;
+                } else if (this.value === 'gestor') {
+                    propiedadGroup.style.display = 'none';
+                    certificadoGroup.style.display = 'block';
+                    document.getElementById('registro-bienes').required = false;
+                    document.getElementById('certificado').required = true;
+                }
+            });
+        });
+
+        document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Usuario creado exitosamente. Funcionalidad será integrada con backend próximamente.');
+            alert('Registro exitoso. Funcionalidad será integrada con backend próximamente.');
         });
     </script>
 </body>
+
 </html>

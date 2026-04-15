@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="navbar-content">
-            <a href="/" class="brand">PNK INMOBILIARIA</a>
+            <a href="index.html" class="brand">PNK INMOBILIARIA</a>
             <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="registro-gestor.html">REGISTRO GESTOR</a></li>
+                <li><a href="registro-usuarios.html">REGISTRARSE</a></li>
                 <li><a href="index.html#contacto">CONTACTO</a></li>
                 <li><a href="login.html">LOGIN</a></li>
             </ul>
@@ -26,21 +28,15 @@
     <main>
         <section class="form-section" aria-labelledby="form-title">
             <h1 id="form-title" class="form-heading">REGISTRO PROPIETARIO</h1>
-            
+
             <form method="post" action="#" class="form-container" aria-label="Formulario de registro de propietario">
                 <fieldset class="form-fieldset">
                     <legend>INFORMACIÓN PERSONAL</legend>
 
                     <div class="form-group">
                         <label for="rut">RUT</label>
-                        <input 
-                            type="text" 
-                            id="rut" 
-                            name="rut" 
-                            placeholder="XX.XXX.XXX-X" 
-                            required
-                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]"
-                            aria-describedby="rut-help">
+                        <input type="text" id="rut" name="rut" placeholder="XX.XXX.XXX-X" required
+                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]" aria-describedby="rut-help">
                         <span id="rut-help" class="form-hint">Formato: XX.XXX.XXX-X</span>
                     </div>
 
@@ -85,12 +81,7 @@
 
                     <div class="form-group">
                         <label for="password">CONTRASEÑA</label>
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
-                            minlength="8" 
-                            required
+                        <input type="password" id="password" name="password" minlength="8" required
                             aria-describedby="password-help">
                         <span id="password-help" class="form-hint">Mínimo 8 caracteres</span>
                     </div>
@@ -130,4 +121,5 @@
         </div>
     </footer>
 </body>
+
 </html>
