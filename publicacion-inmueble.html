@@ -107,53 +107,62 @@
                 <fieldset class="form-fieldset">
                     <legend>SERVICIOS Y AMENIDADES</legend>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="bodega" name="bodega" />
-                            Bodega
-                        </label>
-                    </div>
+                    <div class="amenidades-grid">
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="bodega" name="bodega" />
+                                Bodega
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="estacionamiento" name="estacionamiento" />
-                            Estacionamiento
-                        </label>
-                    </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="estacionamiento" name="estacionamiento" />
+                                Estacionamiento
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="cocina-amoblada" name="cocina-amoblada" />
-                            Cocina amoblada
-                        </label>
-                    </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="cocina-amoblada" name="cocina-amoblada" />
+                                Cocina amoblada
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="antejardi" name="antejardi" />
-                            Antejardín
-                        </label>
-                    </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="antejardi" name="antejardi" />
+                                Antejardín
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="logia" name="logia" />
-                            Logia
-                        </label>
-                    </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="logia" name="logia" />
+                                Logia
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="patio-trasero" name="patio-trasero" />
-                            Patio trasero
-                        </label>
-                    </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="patio-trasero" name="patio-trasero" />
+                                Patio trasero
+                            </label>
+                        </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="piscina" name="piscina" />
-                            Piscina
-                        </label>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="piscina" name="piscina" />
+                                Piscina
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="quincho" name="quincho" />
+                                Quincho
+                            </label>
+                        </div>
                     </div>
 
                 </fieldset>
@@ -165,9 +174,11 @@
                     <div class="form-group">
                         <label for="fotografias">Fotografías [1 a 10]</label>
                         <input type="file" id="fotografias" name="fotografias" multiple accept="image/*" 
-                            required aria-required="true" />
+                            aria-required="true" />
                         <span class="form-hint">Selecciona entre 1 y 10 fotografías. Formatos: JPG, PNG, GIF, WEBP</span>
                     </div>
+
+                    <div id="fotos-preview" class="fotos-preview"></div>
 
                 </fieldset>
 
@@ -176,15 +187,32 @@
                     <legend>INFORMACIÓN ADICIONAL</legend>
 
                     <div class="form-group">
-                        <label for="fecha-publicacion">Fecha de Publicación</label>
-                        <input type="date" id="fecha-publicacion" name="fecha-publicacion" required aria-required="true" />
+                        <label for="codigo">Código de Propiedad (Opcional)</label>
+                        <input type="text" id="codigo" name="codigo" placeholder="Se generará automáticamente si se deja vacío" />
                     </div>
 
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" id="solicitar-visita" name="solicitar-visita" />
-                            Opción de Solicitar una Visita
-                        </label>
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <select id="provincia" name="provincia" required>
+                            <option value="">-- SELECCIONA --</option>
+                            <option value="elqui">Elqui</option>
+                            <option value="limari">Limarí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna" required>
+                            <option value="">-- SELECCIONA --</option>
+                            <option value="la-serena">La Serena</option>
+                            <option value="coquimbo">Coquimbo</option>
+                            <option value="ovalle">Ovalle</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sector">Sector/Barrio</label>
+                        <input type="text" id="sector" name="sector" placeholder="Centro, Playa, etc." required />
                     </div>
 
                 </fieldset>
@@ -193,13 +221,175 @@
                 <div class="form-actions">
                     <button type="submit" class="btn-primary">PUBLICAR INMUEBLE</button>
                     <button type="reset" class="btn-secondary">LIMPIAR FORMULARIO</button>
-                    <a href="dashboard.html" class="btn-tertiary">VOLVER</a>
+                    <a href="index.html" class="btn-tertiary">VOLVER</a>
                 </div>
 
             </form>
         </section>
     </main>
 
+    <script>
+        let currentId = null;
+        let uploadedPhotos = [];
+
+        // Obtener parámetro ?id de la URL
+        const params = new URLSearchParams(window.location.search);
+        currentId = params.get('id');
+
+        // Formatos de precios
+        function formatCLP(valor) {
+            if (!valor) return '';
+            return Math.round(valor).toLocaleString('es-CL');
+        }
+
+        function parseNumber(str) {
+            return parseFloat(str.replace(/[^0-9.,]/g, '').replace(',', '.'));
+        }
+
+        // Manejar múltiples fotos
+        document.getElementById('fotografias').addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            uploadedPhotos = [];
+            const preview = document.getElementById('fotos-preview');
+            preview.innerHTML = '';
+
+            files.slice(0, 10).forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    uploadedPhotos.push(event.target.result);
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.className = 'foto-preview-thumb';
+                    img.style.maxWidth = '100px';
+                    img.style.height = '100px';
+                    img.style.objectFit = 'cover';
+                    img.style.marginRight = '10px';
+                    img.style.marginBottom = '10px';
+                    img.style.cursor = 'pointer';
+                    img.onclick = () => removePhoto(index);
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        function removePhoto(index) {
+            uploadedPhotos.splice(index, 1);
+            document.getElementById('fotografias').value = '';
+            document.getElementById('fotos-preview').innerHTML = '';
+        }
+
+        // Cargar propiedad en modo edición
+        function loadProperty(id) {
+            const props = JSON.parse(localStorage.getItem('propiedades'));
+            const prop = props[id];
+            if (!prop) return;
+
+            document.getElementById('tipo-propiedad').value = prop.tipo;
+            document.getElementById('descripcion').value = prop.descripcion;
+            document.getElementById('dormitorios').value = prop.dormitorios;
+            document.getElementById('banios').value = prop.banos;
+            document.getElementById('area-construida').value = prop.areaConstruida;
+            document.getElementById('area-total').value = prop.areaTerreno;
+            document.getElementById('precio-uf').value = prop.precioUF;
+            document.getElementById('precio-pesos').value = formatCLP(prop.precioPesos);
+            document.getElementById('codigo').value = prop.codigo;
+            document.getElementById('provincia').value = prop.provincia;
+            document.getElementById('comuna').value = prop.comuna;
+            document.getElementById('sector').value = prop.sector;
+
+            // Cargar amenidades
+            prop.amenidades.forEach(amenidad => {
+                const checkbox = document.getElementById(amenidad);
+                if (checkbox) checkbox.checked = true;
+            });
+
+            // Cargar fotos existentes
+            uploadedPhotos = prop.fotos || [];
+            const preview = document.getElementById('fotos-preview');
+            preview.innerHTML = '';
+            uploadedPhotos.forEach((foto, index) => {
+                const img = document.createElement('img');
+                img.src = foto;
+                img.className = 'foto-preview-thumb';
+                img.style.maxWidth = '100px';
+                img.style.height = '100px';
+                img.style.objectFit = 'cover';
+                img.style.marginRight = '10px';
+                img.style.marginBottom = '10px';
+                img.style.cursor = 'pointer';
+                img.onclick = () => removePhoto(index);
+                preview.appendChild(img);
+            });
+
+            document.querySelector('h1').textContent = 'EDITAR PROPIEDAD';
+        }
+
+        // Mostrar notificación
+        function showNotification(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.innerHTML = `✓ ${message}`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Manejar submit del formulario
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (uploadedPhotos.length === 0) {
+                alert('Por favor, sube al menos una fotografía');
+                return;
+            }
+
+            const props = JSON.parse(localStorage.getItem('propiedades'));
+            const id = currentId || Math.max(...Object.keys(props).map(Number)) + 1;
+
+            const formData = {
+                id: parseInt(id),
+                codigo: document.getElementById('codigo').value || `COD-${String(id).padStart(3, '0')}`,
+                tipo: document.getElementById('tipo-propiedad').value,
+                descripcion: document.getElementById('descripcion').value,
+                dormitorios: parseInt(document.getElementById('dormitorios').value),
+                banos: parseInt(document.getElementById('banios').value),
+                areaConstruida: parseFloat(document.getElementById('area-construida').value),
+                areaTerreno: parseFloat(document.getElementById('area-total').value),
+                precioUF: parseFloat(document.getElementById('precio-uf').value),
+                precioPesos: parseNumber(document.getElementById('precio-pesos').value),
+                ubicacion: document.getElementById('comuna').value,
+                provincia: document.getElementById('provincia').value,
+                comuna: document.getElementById('comuna').value,
+                sector: document.getElementById('sector').value,
+                fotos: uploadedPhotos,
+                amenidades: Array.from(document.querySelectorAll('.checkbox-group input:checked'))
+                    .map(cb => cb.id),
+                fechaPublicacion: new Date().toISOString().split('T')[0]
+            };
+
+            props[id] = formData;
+            localStorage.setItem('propiedades', JSON.stringify(props));
+
+            showNotification(currentId ? 'Propiedad actualizada exitosamente' : 'Publicación exitosa');
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+
+        // Cargar si está en modo edición
+        if (currentId) {
+            loadProperty(currentId);
+        }
+
+        // Ocultar campo fecha de publicación
+        document.querySelector('[for="fecha-publicacion"]')?.parentElement.style.display = 'none';
+        document.getElementById('solicitar-visita')?.parentElement.style.display = 'none';
+    </script>
 </body>
 
 </html>

@@ -18,13 +18,15 @@
             <a href="index.html" class="brand">PNK INMOBILIARIA</a>
             <ul class="nav-links">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="registro-usuarios.html">REGISTRARSE</a></li>
-                <li><a href="login.html">LOGOUT</a></li>
+                <li><a href="publicacion-inmueble.html">AGREGAR PROPIEDAD</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="dashboard-main">
+        <!-- Mantenedor de Usuarios -->
         <section class="dashboard-section" aria-labelledby="users-title">
             <h2 id="users-title" class="section-title">MANTENEDOR DE USUARIOS (Administrador)</h2>
             <div class="table-wrapper">
@@ -48,8 +50,7 @@
                             <td>2026-01-15</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar usuario Juan Pérez García">EDITAR</button>
-                                <button class="btn-action"
-                                    aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
                             </td>
                         </tr>
                         <tr>
@@ -59,10 +60,8 @@
                             <td>GESTOR</td>
                             <td>2026-01-20</td>
                             <td class="actions-cell">
-                                <button class="btn-action"
-                                    aria-label="Editar usuario María López Torres">EDITAR</button>
-                                <button class="btn-action"
-                                    aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
+                                <button class="btn-action" aria-label="Editar usuario María López Torres">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
                             </td>
                         </tr>
                         <tr>
@@ -72,10 +71,8 @@
                             <td>PROPIETARIO</td>
                             <td>2026-02-01</td>
                             <td class="actions-cell">
-                                <button class="btn-action"
-                                    aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
-                                <button class="btn-action"
-                                    aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
+                                <button class="btn-action" aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
                             </td>
                         </tr>
                     </tbody>
@@ -84,6 +81,7 @@
             <button class="btn-add" aria-label="Agregar nuevo usuario">AGREGAR USUARIO</button>
         </section>
 
+        <!-- Mantenedor de Propiedades -->
         <section class="dashboard-section" aria-labelledby="properties-title">
             <h2 id="properties-title" class="section-title">MANTENEDOR DE PROPIEDADES</h2>
             <div class="table-wrapper">
@@ -103,9 +101,9 @@
                         <tr>
                             <td>COD-001</td>
                             <td>CASA</td>
-                            <td>Av. del Mar 123</td>
+                            <td>Av. del Mar 123, La Serena</td>
                             <td>ELQUI</td>
-                            <td>150</td>
+                            <td class="price-cell">150 UF</td>
                             <td>Juan Pérez García</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar propiedad COD-001">EDITAR</button>
@@ -115,9 +113,9 @@
                         <tr>
                             <td>COD-002</td>
                             <td>DEPARTAMENTO</td>
-                            <td>Calle Principal 456</td>
+                            <td>Calle Principal 456, Coquimbo</td>
                             <td>ELQUI</td>
-                            <td>80</td>
+                            <td class="price-cell">80 UF</td>
                             <td>María López Torres</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar propiedad COD-002">EDITAR</button>
@@ -127,9 +125,9 @@
                         <tr>
                             <td>COD-003</td>
                             <td>TERRENO</td>
-                            <td>Sector Sur, s/n</td>
+                            <td>Sector Sur, Ovalle</td>
                             <td>LIMARÍ</td>
-                            <td>50</td>
+                            <td class="price-cell">50 UF</td>
                             <td>Carlos Rodríguez Flores</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar propiedad COD-003">EDITAR</button>
@@ -139,19 +137,34 @@
                         <tr>
                             <td>COD-004</td>
                             <td>CASA</td>
-                            <td>Pasaje Los Andes 789</td>
+                            <td>Pasaje Los Andes 789, La Serena</td>
                             <td>ELQUI</td>
-                            <td>200</td>
+                            <td class="price-cell">200 UF</td>
                             <td>Juan Pérez García</td>
                             <td class="actions-cell">
                                 <button class="btn-action" aria-label="Editar propiedad COD-004">EDITAR</button>
                                 <button class="btn-action" aria-label="Eliminar propiedad COD-004">ELIMINAR</button>
                             </td>
                         </tr>
+                        <tr>
+                            <td>COD-005</td>
+                            <td>LOCAL</td>
+                            <td>Av. Costanera 321, Coquimbo</td>
+                            <td>ELQUI</td>
+                            <td class="price-cell">95 UF</td>
+                            <td>María López Torres</td>
+                            <td class="actions-cell">
+                                <button class="btn-action" aria-label="Editar propiedad COD-005">EDITAR</button>
+                                <button class="btn-action" aria-label="Eliminar propiedad COD-005">ELIMINAR</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <a href="publicacion-inmueble.html" class="btn-add" aria-label="Agregar nueva propiedad">AGREGAR PROPIEDAD</a>
+            <div class="dashboard-buttons">
+                <a href="publicacion-inmueble.html" class="btn-add" aria-label="Agregar nueva propiedad">AGREGAR PROPIEDAD</a>
+                <a href="index.html" class="btn-tertiary">VOLVER AL INICIO</a>
+            </div>
         </section>
     </main>
 
@@ -175,6 +188,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>

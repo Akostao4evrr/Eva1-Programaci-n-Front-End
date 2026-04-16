@@ -32,16 +32,16 @@
                 <div class="search-grid">
                     <div class="search-field">
                         <label for="provincia">PROVINCIA</label>
-                        <select id="provincia" name="provincia" required>
-                            <option value="">Seleccionar</option>
+                        <select id="provincia" name="provincia">
+                            <option value="">Todas</option>
                             <option value="elqui">Elqui</option>
                             <option value="limari">Limarí</option>
                         </select>
                     </div>
                     <div class="search-field">
                         <label for="comuna">COMUNA</label>
-                        <select id="comuna" name="comuna" required>
-                            <option value="">Seleccionar</option>
+                        <select id="comuna" name="comuna">
+                            <option value="">Todas</option>
                             <option value="la-serena">La Serena</option>
                             <option value="coquimbo">Coquimbo</option>
                             <option value="ovalle">Ovalle</option>
@@ -52,122 +52,21 @@
                         <input type="text" id="sector" name="sector" placeholder="Centro, Playa, etc.">
                     </div>
                 </div>
-                <button type="submit" class="btn-search">BUSCAR</button>
+                <button type="button" class="btn-search" id="btn-filtrar">BUSCAR</button>
             </form>
         </section>
 
         <section class="properties-section" aria-labelledby="properties-title">
             <h2 id="properties-title" class="section-title">PROPIEDADES</h2>
-            <div class="properties-grid">
-                <!-- Propiedad 1 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://images.proppit.com/properties/42407880-89d2-4740-9ad0-0ba69c473cf5/9d8712d1-e785-4d09-86cc-c2500fb14371.bin"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Casa en La Serena">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-001</span>
-                            <span class="property-type">CASA</span>
-                        </div>
-                        <h3 class="property-location">La Serena, Región de Coquimbo</h3>
-                        <p class="property-price">150 UF / $4.500.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
-
-                <!-- Propiedad 2 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://ppartnersgroup.com/_next/image/?url=https:%2F%2Fassets.easybroker.com%2Fproperty_images%2F3674208%2F60018068%2FEB-NC4208.jpg%3Fversion%3D1681416439&w=1920&q=75"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Departamento en Coquimbo">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-002</span>
-                            <span class="property-type">DEPARTAMENTO</span>
-                        </div>
-                        <h3 class="property-location">Coquimbo, Región de Coquimbo</h3>
-                        <p class="property-price">80 UF / $2.400.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
-
-                <!-- Propiedad 3 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://www.dlpropiedades.cl/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-23-at-13.05.20-1.jpeg"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Terreno en Ovalle">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-003</span>
-                            <span class="property-type">TERRENO</span>
-                        </div>
-                        <h3 class="property-location">Ovalle, Región de Coquimbo</h3>
-                        <p class="property-price">50 UF / $1.500.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
-
-                <!-- Propiedad 4 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/36/6f/1e/1120283064.jpg"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Casa en La Serena">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-004</span>
-                            <span class="property-type">CASA</span>
-                        </div>
-                        <h3 class="property-location">La Serena, Región de Coquimbo</h3>
-                        <p class="property-price">200 UF / $6.000.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
-
-                <!-- Propiedad 5 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1216711281148310913/original/b2fd2e86-65ae-4de3-8c0b-d962ae36eb5f.jpeg?im_w=1200"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Departamento en Coquimbo">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-005</span>
-                            <span class="property-type">DEPARTAMENTO</span>
-                        </div>
-                        <h3 class="property-location">Coquimbo, Región de Coquimbo</h3>
-                        <p class="property-price">95 UF / $2.850.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
-
-                <!-- Propiedad 6 -->
-                <article class="property-card">
-                    <div class="property-image">
-                        <img src="https://cf.chilepropiedades.cl/imagenes/publicacion/venta/terreno/ovalle/1/c3956d3ebf0946ba8a4c6c456d7cb7f7.jpeg"
-                            width='400' height='300' %3E%3Crect width='400' height='300' fill='%23ccc' /%3E%3C/svg%3E"
-                            alt="Terreno en Ovalle">
-                    </div>
-                    <div class="property-content">
-                        <div class="property-meta">
-                            <span class="property-code">COD-006</span>
-                            <span class="property-type">TERRENO</span>
-                        </div>
-                        <h3 class="property-location">Ovalle, Región de Coquimbo</h3>
-                        <p class="property-price">75 UF / $2.250.000</p>
-                        <a href="detalle-propiedad.html" class="link-more" aria-label="Ver detalles de la propiedad">VER MÁS</a>
-                    </div>
-                </article>
+            <div class="properties-grid" id="propiedades-grid">
+                <!-- Se renderecerá dinámicamente -->
             </div>
         </section>
+        
+        <nav class="navbar-actions" style="margin-top: 40px;">
+            <a href="publicacion-inmueble.html" class="btn-primary">+ AGREGAR PROPIEDAD</a>
+            <a href="dashboard.html" class="btn-primary">DASHBOARD</a>
+        </nav>
     </main>
 
     <footer id="contacto" class="footer" role="contentinfo">
@@ -190,6 +89,207 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Seed data de propiedades
+        const seedProperties = {
+            1: {
+                id: 1,
+                codigo: 'COD-001',
+                tipo: 'casa',
+                ubicacion: 'La Serena',
+                provincia: 'elqui',
+                comuna: 'la-serena',
+                sector: 'Centro',
+                dormitorios: 3,
+                banos: 2,
+                areaConstruida: 120.5,
+                areaTerreno: 200,
+                precioUF: 150,
+                precioPesos: 4500000,
+                amenidades: ['bodega', 'estacionamiento', 'cocina-amoblada', 'piscina'],
+                fotos: ['https://images.proppit.com/properties/42407880-89d2-4740-9ad0-0ba69c473cf5/9d8712d1-e785-4d09-86cc-c2500fb14371.bin'],
+                descripcion: 'Hermosa casa ubicada en La Serena con todos los servicios y comodidades.',
+                fechaPublicacion: '2026-04-15'
+            },
+            2: {
+                id: 2,
+                codigo: 'COD-002',
+                tipo: 'apartamento',
+                ubicacion: 'Coquimbo',
+                provincia: 'elqui',
+                comuna: 'coquimbo',
+                sector: 'Playa',
+                dormitorios: 2,
+                banos: 1,
+                areaConstruida: 85,
+                areaTerreno: 100,
+                precioUF: 80,
+                precioPesos: 2400000,
+                amenidades: ['estacionamiento', 'logia'],
+                fotos: ['https://ppartnersgroup.com/_next/image/?url=https:%2F%2Fassets.easybroker.com%2Fproperty_images%2F3674208%2F60018068%2FEB-NC4208.jpg%3Fversion%3D1681416439&w=1920&q=75'],
+                descripcion: 'Departamento con vista al mar en Coquimbo.',
+                fechaPublicacion: '2026-04-14'
+            },
+            3: {
+                id: 3,
+                codigo: 'COD-003',
+                tipo: 'terreno',
+                ubicacion: 'Ovalle',
+                provincia: 'limari',
+                comuna: 'ovalle',
+                sector: 'Sector Sur',
+                dormitorios: 0,
+                banos: 0,
+                areaConstruida: 0,
+                areaTerreno: 500,
+                precioUF: 50,
+                precioPesos: 1500000,
+                amenidades: [],
+                fotos: ['https://www.dlpropiedades.cl/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-23-at-13.05.20-1.jpeg'],
+                descripcion: 'Terreno en Ovalle, excelente para inversión.',
+                fechaPublicacion: '2026-04-13'
+            },
+            4: {
+                id: 4,
+                codigo: 'COD-004',
+                tipo: 'casa',
+                ubicacion: 'La Serena',
+                provincia: 'elqui',
+                comuna: 'la-serena',
+                sector: 'Peñuelas',
+                dormitorios: 4,
+                banos: 3,
+                areaConstruida: 180,
+                areaTerreno: 300,
+                precioUF: 200,
+                precioPesos: 6000000,
+                amenidades: ['bodega', 'estacionamiento', 'piscina', 'quincho'],
+                fotos: ['https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/36/6f/1e/1120283064.jpg'],
+                descripcion: 'Casa de lujo con todas las comodidades.',
+                fechaPublicacion: '2026-04-12'
+            },
+            5: {
+                id: 5,
+                codigo: 'COD-005',
+                tipo: 'apartamento',
+                ubicacion: 'Coquimbo',
+                provincia: 'elqui',
+                comuna: 'coquimbo',
+                sector: 'Centro',
+                dormitorios: 3,
+                banos: 2,
+                areaConstruida: 110,
+                areaTerreno: 120,
+                precioUF: 95,
+                precioPesos: 2850000,
+                amenidades: ['estacionamiento', 'cocina-amoblada', 'logia'],
+                fotos: ['https://a0.muscache.com/im/pictures/hosting/Hosting-1216711281148310913/original/b2fd2e86-65ae-4de3-8c0b-d962ae36eb5f.jpeg?im_w=1200'],
+                descripcion: 'Apartamento moderno ubicado en centro de Coquimbo.',
+                fechaPublicacion: '2026-04-11'
+            },
+            6: {
+                id: 6,
+                codigo: 'COD-006',
+                tipo: 'terreno',
+                ubicacion: 'Ovalle',
+                provincia: 'limari',
+                comuna: 'ovalle',
+                sector: 'Sector Comercial',
+                dormitorios: 0,
+                banos: 0,
+                areaConstruida: 0,
+                areaTerreno: 350,
+                precioUF: 75,
+                precioPesos: 2250000,
+                amenidades: [],
+                fotos: ['https://cf.chilepropiedades.cl/imagenes/publicacion/venta/terreno/ovalle/1/c3956d3ebf0946ba8a4c6c456d7cb7f7.jpeg'],
+                descripcion: 'Terreno comercial en Ovalle.',
+                fechaPublicacion: '2026-04-10'
+            }
+        };
+
+        // Inicializar localStorage con seed data
+        function initializePropiedades() {
+            const stored = localStorage.getItem('propiedades');
+            if (!stored) {
+                localStorage.setItem('propiedades', JSON.stringify(seedProperties));
+            }
+        }
+
+        // Formatos de precios
+        const VALOR_UF = 30000; // Valor aproximado UF
+
+        function formatUF(valor) {
+            if (valor === undefined || valor === null || valor === '') return '0 UF';
+            const num = parseFloat(valor);
+            if (isNaN(num)) return '0 UF';
+            return num.toLocaleString('es-CL', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' UF';
+        }
+
+        function formatCLP(valorUF) {
+            if (valorUF === undefined || valorUF === null || valorUF === '') return '$ 0';
+            const num = parseFloat(valorUF);
+            if (isNaN(num)) return '$ 0';
+            const pesos = Math.round(num * VALOR_UF);
+            return '$ ' + pesos.toLocaleString('es-CL');
+        }
+
+        // Renderizar propiedades
+        function renderProperties(propiedades) {
+            const grid = document.getElementById('propiedades-grid');
+            grid.innerHTML = '';
+
+            Object.values(propiedades).forEach(prop => {
+                const card = document.createElement('article');
+                card.className = 'property-card';
+                card.innerHTML = `
+                    <div class="property-image">
+                        <img src="${prop.fotos[0] || ''}" alt="${prop.tipo}">
+                    </div>
+                    <div class="property-content">
+                        <div class="property-meta">
+                            <span class="property-code">${prop.codigo}</span>
+                            <span class="property-type">${prop.tipo.toUpperCase()}</span>
+                        </div>
+                        <h3 class="property-location">${prop.ubicacion}, Región de Coquimbo</h3>
+                        <p class="property-price">
+                            <span class="price-uf">${formatUF(prop.precioUF)}</span>
+                            <span class="price-clp">${formatCLP(prop.precioUF)}</span>
+                        </p>
+                        <a href="detalle-propiedad.html?id=${prop.id}" class="link-more">VER MÁS</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtrar propiedades
+        function filterProperties() {
+            const provincia = document.getElementById('provincia').value;
+            const comuna = document.getElementById('comuna').value;
+            const sector = document.getElementById('sector').value.toLowerCase();
+
+            const allProps = JSON.parse(localStorage.getItem('propiedades'));
+            const filtered = Object.values(allProps).filter(prop => {
+                return (!provincia || prop.provincia === provincia) &&
+                       (!comuna || prop.comuna === comuna) &&
+                       (!sector || prop.sector.toLowerCase().includes(sector));
+            });
+
+            renderProperties(Object.fromEntries(filtered.map(p => [p.id, p])));
+        }
+
+        // Event listeners
+        document.getElementById('btn-filtrar').addEventListener('click', filterProperties);
+        document.getElementById('provincia').addEventListener('change', filterProperties);
+        document.getElementById('comuna').addEventListener('change', filterProperties);
+        document.getElementById('sector').addEventListener('keyup', filterProperties);
+
+        // Inicializar
+        initializePropiedades();
+        renderProperties(JSON.parse(localStorage.getItem('propiedades')));
+    </script>
 </body>
 
 </html>

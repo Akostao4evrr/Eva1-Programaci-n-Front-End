@@ -281,12 +281,26 @@ main {
 }
 
 .property-price {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
-    color: #000000;
+    color: #2c5282;
     margin-top: auto;
     padding-top: 12px;
-    border-top: 1px solid #000000;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.property-price .price-uf {
+    font-size: 16px;
+    color: #2c5282;
+}
+
+.property-price .price-clp {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
 }
 
 .link-more {
@@ -574,6 +588,20 @@ main {
     border: 1px solid #000000;
 }
 
+/* Dashboard Buttons Container */
+.dashboard-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dashboard-buttons .btn-add,
+.dashboard-buttons .btn-tertiary {
+    flex: none;
+    display: inline-block;
+    text-align: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -603,8 +631,8 @@ th:last-child {
 td {
     padding: 16px;
     font-size: 13px;
-    border-right: 1px solid #000000;
-    border-bottom: 1px solid #000000;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 td:last-child {
@@ -613,6 +641,17 @@ td:last-child {
 
 tbody tr:last-child td {
     border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para columna de precios en tablas */
+td.price-cell {
+    font-weight: 700;
+    color: #2c5282;
+    font-size: 14px;
 }
 
 .actions-cell {
@@ -869,23 +908,30 @@ tbody tr:last-child td {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 20px;
-    border: 1px solid #000000;
-    background-color: #f9f9f9;
+    padding: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.pricing-item:hover {
+    border-color: #2c5282;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.15);
 }
 
 .pricing-item .label {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #666666;
 }
 
 .pricing-item .value {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 700;
-    color: #000000;
+    color: #2c5282;
 }
 
 /* Sección de Características */
@@ -920,28 +966,39 @@ tbody tr:last-child td {
 /* Sección de Amenidades */
 .amenities-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
 }
 
 .amenity-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px;
-    border: 1px solid #000000;
-    background-color: #f9f9f9;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.amenity-item:hover {
+    background-color: #e9ecef;
+    border-color: #495057;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .amenity-icon {
     font-size: 16px;
     font-weight: 700;
-    color: #000000;
+    color: #2c5282;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
 }
 
 .amenity-name {
@@ -1058,6 +1115,62 @@ tbody tr:last-child td {
 .detail-actions {
     text-align: center;
     margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-primary:focus {
+    outline: 1px solid #000000;
+    outline-offset: 2px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-secondary:focus {
+    outline: 1px solid #000000;
+    outline-offset: 2px;
 }
 
 .btn-tertiary {
@@ -1084,6 +1197,187 @@ tbody tr:last-child td {
 .btn-tertiary:focus {
     outline: 1px solid #000000;
     outline-offset: 2px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.form-actions .btn-primary,
+.form-actions .btn-secondary,
+.form-actions .btn-tertiary {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Checkbox Group - Estilo base */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px !important;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000000;
+}
+
+/* Contenedor de checkboxes para servicios */
+.amenidades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.amenidades-grid .checkbox-group {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 0 !important;
+    transition: all 0.2s ease;
+    flex: 1 1 calc(50% - 10px);
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.amenidades-grid .checkbox-group:hover {
+    background: #e9ecef;
+    border-color: #495057;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.amenidades-grid .checkbox-group label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    cursor: pointer;
+}
+
+.amenidades-grid .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #2c5282;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: 1px solid #6c757d;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+    .amenidades-grid .checkbox-group {
+        flex: 1 1 100%;
+    }
+}
+
+/* Fotos Preview */
+.fotos-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.foto-preview-thumb {
+    border: 1px solid #000000;
+    padding: 4px;
+}
+
+.foto-preview-thumb:hover {
+    opacity: 0.7;
+}
+
+/* Toast Message (Notificación) */
+.toast-message {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.3s ease forwards;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-message::before {
+    content: '✓';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Button Link Style */
+.btn-link {
+    background: none;
+    border: none;
+    color: #000000;
+    text-decoration: underline;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s ease;
+}
+
+.btn-link:hover {
+    opacity: 0.6;
+}
+
+.btn-delete {
+    color: #d32f2f;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ========================================

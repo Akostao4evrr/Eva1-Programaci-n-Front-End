@@ -30,19 +30,13 @@
             
             <!-- Galería de Fotografías -->
             <section class="detail-section gallery-section" aria-labelledby="gallery-title">
-                <h2 id="gallery-title" class="section-title">FOTOGRAFÍAS [1 a 10]</h2>
+                <h2 id="gallery-title" class="section-title">FOTOGRAFÍAS</h2>
                 <div class="gallery-wrapper">
                     <div class="main-image">
-                        <img src="https://images.proppit.com/properties/42407880-89d2-4740-9ad0-0ba69c473cf5/9d8712d1-e785-4d09-86cc-c2500fb14371.bin" 
-                            alt="Fotografía principal de la propiedad" />
+                        <img id="main-image" src="" alt="Fotografía principal de la propiedad" />
                     </div>
-                    <div class="gallery-thumbnails">
-                        <img src="https://images.proppit.com/properties/42407880-89d2-4740-9ad0-0ba69c473cf5/9d8712d1-e785-4d09-86cc-c2500fb14371.bin" 
-                            alt="Foto 1" class="thumbnail" />
-                        <img src="https://ppartnersgroup.com/_next/image/?url=https:%2F%2Fassets.easybroker.com%2Fproperty_images%2F3674208%2F60018068%2FEB-NC4208.jpg%3Fversion%3D1681416439&w=1920&q=75" 
-                            alt="Foto 2" class="thumbnail" />
-                        <img src="https://www.dlpropiedades.cl/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-23-at-13.05.20-1.jpeg" 
-                            alt="Foto 3" class="thumbnail" />
+                    <div class="gallery-thumbnails" id="thumbnails">
+                        <!-- Se renderecerán dinámicamente -->
                     </div>
                 </div>
             </section>
@@ -53,11 +47,11 @@
                 <div class="pricing-grid">
                     <div class="pricing-item">
                         <span class="label">Precio en UF</span>
-                        <span class="value">150 UF</span>
+                        <span class="value" id="precio-uf">-</span>
                     </div>
                     <div class="pricing-item">
                         <span class="label">Precio en $</span>
-                        <span class="value">$4.500.000</span>
+                        <span class="value" id="precio-clp">-</span>
                     </div>
                 </div>
             </section>
@@ -68,19 +62,19 @@
                 <div class="characteristics-grid">
                     <div class="characteristic-item">
                         <span class="label">Cantidad de Dormitorios</span>
-                        <span class="value">3</span>
+                        <span class="value" id="dormitorios">-</span>
                     </div>
                     <div class="characteristic-item">
                         <span class="label">Cantidad de Baños</span>
-                        <span class="value">2</span>
+                        <span class="value" id="banos">-</span>
                     </div>
                     <div class="characteristic-item">
                         <span class="label">Área Construida</span>
-                        <span class="value">120.50 m²</span>
+                        <span class="value" id="area-construida">-</span>
                     </div>
                     <div class="characteristic-item">
                         <span class="label">Área Total del Terreno</span>
-                        <span class="value">200.00 m²</span>
+                        <span class="value" id="area-terreno">-</span>
                     </div>
                 </div>
             </section>
@@ -88,47 +82,15 @@
             <!-- Servicios y Amenidades -->
             <section class="detail-section amenities-section" aria-labelledby="amenities-title">
                 <h2 id="amenities-title" class="section-title">SERVICIOS Y AMENIDADES</h2>
-                <div class="amenities-list">
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Bodega</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Estacionamiento</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Cocina amoblada</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Antejardín</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Logia</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Patio trasero</span>
-                    </div>
-                    <div class="amenity-item">
-                        <span class="amenity-icon">✓</span>
-                        <span class="amenity-name">Piscina</span>
-                    </div>
+                <div class="amenities-list" id="amenities">
+                    <!-- Se renderecerán dinámicamente -->
                 </div>
             </section>
 
             <!-- Descripción -->
             <section class="detail-section description-section" aria-labelledby="description-title">
                 <h2 id="description-title" class="section-title">DESCRIPCIÓN</h2>
-                <p class="description-text">
-                    Hermosa casa ubicada en La Serena con todos los servicios y comodidades. La propiedad cuenta con 
-                    amplios espacios, iluminación natural, vistas al mar y está completamente equipada. Perfecta para 
-                    familias o inversión inmobiliaria. La zona es tranquila, segura y bien conectada con transporte público 
-                    y servicios cercanos.
-                </p>
+                <p class="description-text" id="descripcion">-</p>
             </section>
 
             <!-- Información Adicional -->
@@ -136,12 +98,16 @@
                 <h2 id="additional-title" class="section-title">INFORMACIÓN ADICIONAL</h2>
                 <div class="additional-info">
                     <div class="info-item">
-                        <span class="label">Fecha de Publicación</span>
-                        <span class="value">15 de Abril de 2026</span>
+                        <span class="label">Código de Propiedad</span>
+                        <span class="value" id="codigo">-</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Código de Propiedad</span>
-                        <span class="value">COD-001</span>
+                        <span class="label">Ubicación</span>
+                        <span class="value" id="ubicacion">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Sector</span>
+                        <span class="value" id="sector">-</span>
                     </div>
                 </div>
             </section>
@@ -180,10 +146,146 @@
             <!-- Botones de Acción -->
             <div class="detail-actions">
                 <a href="index.html" class="btn-tertiary">VOLVER AL INICIO</a>
+                <a href="#" id="edit-btn" class="btn-primary">EDITAR PROPIEDAD</a>
+                <a href="#" id="delete-btn" class="btn-secondary">ELIMINAR PROPIEDAD</a>
             </div>
 
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PNK INMOBILIARIA</h3>
+                <address>
+                    <p>Calle Principal 123, La Serena</p>
+                    <p>Región de Coquimbo, Chile</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p><a href="mailto:contacto@pnkinmobiliaria.cl">contacto@pnkinmobiliaria.cl</a></p>
+                <p><a href="tel:+56511234567">+56 51 123 4567</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>INFORMACIÓN</h4>
+                <p>&copy; 2026 PNK INMOBILIARIA. Región de Coquimbo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const amenitiesMap = {
+            'bodega': 'Bodega',
+            'estacionamiento': 'Estacionamiento',
+            'cocina-amoblada': 'Cocina amoblada',
+            'antejardi': 'Antejardín',
+            'logia': 'Logia',
+            'patio-trasero': 'Patio trasero',
+            'piscina': 'Piscina',
+            'quincho': 'Quincho'
+        };
+
+        const VALOR_UF = 30000; // Valor aproximado UF
+
+        function formatUF(valor) {
+            if (valor === undefined || valor === null || valor === '') return '0 UF';
+            const num = parseFloat(valor);
+            if (isNaN(num)) return '0 UF';
+            return num.toLocaleString('es-CL', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' UF';
+        }
+
+        function formatCLP(valorUF) {
+            if (valorUF === undefined || valorUF === null || valorUF === '') return '$ 0';
+            const num = parseFloat(valorUF);
+            if (isNaN(num)) return '$ 0';
+            const pesos = Math.round(num * VALOR_UF);
+            return '$ ' + pesos.toLocaleString('es-CL');
+        }
+
+        function cargarPropiedad(id) {
+            const props = JSON.parse(localStorage.getItem('propiedades'));
+            const prop = props[id];
+            
+            if (!prop) {
+                document.body.innerHTML = '<h1>Propiedad no encontrada</h1><p><a href="index.html">Volver al inicio</a></p>';
+                return;
+            }
+
+            // Precios
+            document.getElementById('precio-uf').textContent = formatUF(prop.precioUF);
+            document.getElementById('precio-clp').textContent = formatCLP(prop.precioUF);
+
+            // Características
+            document.getElementById('dormitorios').textContent = prop.dormitorios;
+            document.getElementById('banos').textContent = prop.banos;
+            document.getElementById('area-construida').textContent = prop.areaConstruida + ' m²';
+            document.getElementById('area-terreno').textContent = prop.areaTerreno + ' m²';
+
+            // Amenidades
+            const amenitiesDiv = document.getElementById('amenities');
+            amenitiesDiv.innerHTML = '';
+            prop.amenidades.forEach(amenidad => {
+                const amenityItem = document.createElement('div');
+                amenityItem.className = 'amenity-item';
+                amenityItem.innerHTML = `
+                    <span class="amenity-icon">✓</span>
+                    <span class="amenity-name">${amenitiesMap[amenidad] || amenidad}</span>
+                `;
+                amenitiesDiv.appendChild(amenityItem);
+            });
+
+            // Descripción
+            document.getElementById('descripcion').textContent = prop.descripcion;
+
+            // Información adicional
+            document.getElementById('codigo').textContent = prop.codigo;
+            document.getElementById('ubicacion').textContent = prop.ubicacion ? prop.ubicacion.toUpperCase() : '-';
+            document.getElementById('sector').textContent = prop.sector;
+
+            // Fotos
+            if (prop.fotos && prop.fotos.length > 0) {
+                document.getElementById('main-image').src = prop.fotos[0];
+                const thumbnailsDiv = document.getElementById('thumbnails');
+                thumbnailsDiv.innerHTML = '';
+                prop.fotos.forEach((foto, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = foto;
+                    thumb.className = 'thumbnail';
+                    thumb.alt = `Foto ${index + 1}`;
+                    thumb.style.cursor = 'pointer';
+                    thumb.onclick = () => {
+                        document.getElementById('main-image').src = foto;
+                    };
+                    thumbnailsDiv.appendChild(thumb);
+                });
+            }
+
+            // Botones de acción
+            document.getElementById('edit-btn').href = `publicacion-inmueble.html?id=${id}`;
+            document.getElementById('delete-btn').onclick = (e) => {
+                e.preventDefault();
+                if (confirm('¿Estás seguro de que deseas eliminar esta propiedad?')) {
+                    const props = JSON.parse(localStorage.getItem('propiedades'));
+                    delete props[id];
+                    localStorage.setItem('propiedades', JSON.stringify(props));
+                    window.location.href = 'index.html';
+                }
+            };
+        }
+
+        // Cargar propiedad
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        if (id) {
+            cargarPropiedad(id);
+        }
+    </script>
+
+</body>
+
+</html>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
