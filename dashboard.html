@@ -78,7 +78,7 @@
                     </tbody>
                 </table>
             </div>
-            <button class="btn-add" aria-label="Agregar nuevo usuario">AGREGAR USUARIO</button>
+            <button class="btn-add" id="btn-add-user" aria-label="Agregar nuevo usuario">AGREGAR USUARIO</button>
         </section>
 
         <!-- Mantenedor de Propiedades -->
@@ -188,6 +188,231 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Agregar Usuario -->
+    <div id="modal-add-user" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+            <h2 class="modal-title">AGREGAR USUARIO</h2>
+            
+            <div class="form-group">
+                <label for="user-type">TIPO DE USUARIO</label>
+                <select id="user-type" name="user-type" required>
+                    <option value="">Seleccionar tipo de usuario</option>
+                    <option value="propietario">PROPIETARIO</option>
+                    <option value="gestor">GESTOR INMOBILIARIO</option>
+                </select>
+            </div>
+
+            <!-- Formulario Propietario -->
+            <form id="form-propietario" class="user-form" style="display: none;">
+                <fieldset class="form-fieldset">
+                    <legend>DATOS PROPIETARIO</legend>
+                    
+                    <div class="form-group">
+                        <label for="prop-rut">RUT</label>
+                        <input type="text" id="prop-rut" name="rut" placeholder="XX.XXX.XXX-X" required
+                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-nombre">NOMBRE COMPLETO</label>
+                        <input type="text" id="prop-nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-fecha-nac">FECHA DE NACIMIENTO</label>
+                        <input type="date" id="prop-fecha-nac" name="fecha-nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-email">CORREO ELECTRÓNICO</label>
+                        <input type="email" id="prop-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-telefono">TELÉFONO MÓVIL</label>
+                        <input type="tel" id="prop-telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-sexo">SEXO</label>
+                        <select id="prop-sexo" name="sexo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-registro-bienes">N° REGISTRO BIENES RAÍCES</label>
+                        <input type="text" id="prop-registro-bienes" name="registro-bienes" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-password">CONTRASEÑA</label>
+                        <input type="password" id="prop-password" name="password" minlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prop-confirm-password">CONFIRMAR CONTRASEÑA</label>
+                        <input type="password" id="prop-confirm-password" name="confirm-password" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-notice">
+                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active la cuenta.</p>
+                </div>
+
+                <button type="submit" class="btn-submit">REGISTRAR PROPIETARIO</button>
+            </form>
+
+            <!-- Formulario Gestor -->
+            <form id="form-gestor" class="user-form" style="display: none;">
+                <fieldset class="form-fieldset">
+                    <legend>DATOS GESTOR INMOBILIARIO</legend>
+                    
+                    <div class="form-group">
+                        <label for="gest-rut">RUT</label>
+                        <input type="text" id="gest-rut" name="rut" placeholder="XX.XXX.XXX-X" required
+                            pattern="\d{1,2}\.\d{3}\.\d{3}-[\dKk]">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-nombre">NOMBRE COMPLETO</label>
+                        <input type="text" id="gest-nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-fecha-nac">FECHA DE NACIMIENTO</label>
+                        <input type="date" id="gest-fecha-nac" name="fecha-nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-email">CORREO ELECTRÓNICO</label>
+                        <input type="email" id="gest-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-telefono">TELÉFONO MÓVIL</label>
+                        <input type="tel" id="gest-telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-sexo">SEXO</label>
+                        <select id="gest-sexo" name="sexo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-certificado">CERTIFICADO DE ANTECEDENTES</label>
+                        <input type="file" id="gest-certificado" name="certificado" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-password">CONTRASEÑA</label>
+                        <input type="password" id="gest-password" name="password" minlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gest-confirm-password">CONFIRMAR CONTRASEÑA</label>
+                        <input type="password" id="gest-confirm-password" name="confirm-password" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-notice">
+                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active la cuenta.</p>
+                </div>
+
+                <button type="submit" class="btn-submit">REGISTRAR GESTOR</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Variables del modal
+        const modal = document.getElementById('modal-add-user');
+        const btnAddUser = document.getElementById('btn-add-user');
+        const modalClose = document.querySelector('.modal-close');
+        const userTypeSelect = document.getElementById('user-type');
+        const formPropietario = document.getElementById('form-propietario');
+        const formGestor = document.getElementById('form-gestor');
+
+        // Abrir modal
+        btnAddUser.addEventListener('click', () => {
+            modal.setAttribute('aria-hidden', 'false');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cerrar modal
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        function closeModal() {
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            // Limpiar formularios
+            userTypeSelect.value = '';
+            formPropietario.reset();
+            formGestor.reset();
+            formPropietario.style.display = 'none';
+            formGestor.style.display = 'none';
+        }
+
+        // Cambiar formulario según tipo de usuario
+        userTypeSelect.addEventListener('change', (e) => {
+            const tipo = e.target.value;
+            formPropietario.style.display = 'none';
+            formGestor.style.display = 'none';
+            
+            if (tipo === 'propietario') {
+                formPropietario.style.display = 'block';
+            } else if (tipo === 'gestor') {
+                formGestor.style.display = 'block';
+            }
+        });
+
+        // Validar contraseñas Propietario
+        formPropietario.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = document.getElementById('prop-password').value;
+            const confirmPassword = document.getElementById('prop-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            // Aquí iría la lógica para guardar el usuario
+            alert('Propietario registrado exitosamente. Queda en estado PENDIENTE.');
+            closeModal();
+        });
+
+        // Validar contraseñas Gestor
+        formGestor.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = document.getElementById('gest-password').value;
+            const confirmPassword = document.getElementById('gest-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            // Aquí iría la lógica para guardar el usuario
+            alert('Gestor inmobiliario registrado exitosamente. Queda en estado PENDIENTE.');
+            closeModal();
+        });
+    </script>
 
 </body>
 

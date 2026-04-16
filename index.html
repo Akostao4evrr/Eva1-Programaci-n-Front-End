@@ -285,7 +285,6 @@
         document.getElementById('provincia').addEventListener('change', filterProperties);
         document.getElementById('comuna').addEventListener('change', filterProperties);
         document.getElementById('sector').addEventListener('keyup', filterProperties);
-
         // Inicializar
         initializePropiedades();
         renderProperties(JSON.parse(localStorage.getItem('propiedades')));
