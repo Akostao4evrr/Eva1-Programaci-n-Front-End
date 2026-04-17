@@ -26,6 +26,35 @@
     </nav>
 
     <main class="dashboard-main">
+        <section class="dashboard-hero">
+            <h1>Bienvenido, Usuario123</h1>
+            <div class="dashboard-metrics">
+                <div class="metric-card">
+                    <span class="metric-label">Total de Propiedades</span>
+                    <strong class="metric-value">12</strong>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Disponibles vs. Vendidas/Arrendadas</span>
+                    <div class="chart-container">
+                        <div class="pie-chart"></div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color legend-available"></span>
+                                <span class="legend-text">8 Disponibles</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color legend-sold"></span>
+                                <span class="legend-text">4 Vendidas/Arrendadas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Valor Total de la Cartera</span>
+                    <strong class="metric-value">520 UF</strong>
+                </div>
+            </div>
+        </section>
         <!-- Mantenedor de Usuarios -->
         <section class="dashboard-section" aria-labelledby="users-title">
             <h2 id="users-title" class="section-title">MANTENEDOR DE USUARIOS (Administrador)</h2>
@@ -49,8 +78,8 @@
                             <td>PROPIETARIO</td>
                             <td>2026-01-15</td>
                             <td class="actions-cell">
-                                <button class="btn-action" aria-label="Editar usuario Juan Pérez García">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario Juan Pérez García">ELIMINAR</button>
+                                <button class="btn-action" aria-label="Aceptar usuario Juan Pérez García">Aceptar este
+                                    usuario</button>
                             </td>
                         </tr>
                         <tr>
@@ -60,8 +89,10 @@
                             <td>GESTOR</td>
                             <td>2026-01-20</td>
                             <td class="actions-cell">
-                                <button class="btn-action" aria-label="Editar usuario María López Torres">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
+                                <button class="btn-action"
+                                    aria-label="Editar usuario María López Torres">EDITAR</button>
+                                <button class="btn-action"
+                                    aria-label="Eliminar usuario María López Torres">ELIMINAR</button>
                             </td>
                         </tr>
                         <tr>
@@ -71,8 +102,10 @@
                             <td>PROPIETARIO</td>
                             <td>2026-02-01</td>
                             <td class="actions-cell">
-                                <button class="btn-action" aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
-                                <button class="btn-action" aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
+                                <button class="btn-action"
+                                    aria-label="Editar usuario Carlos Rodríguez Flores">EDITAR</button>
+                                <button class="btn-action"
+                                    aria-label="Eliminar usuario Carlos Rodríguez Flores">ELIMINAR</button>
                             </td>
                         </tr>
                     </tbody>
@@ -162,7 +195,8 @@
                 </table>
             </div>
             <div class="dashboard-buttons">
-                <a href="publicacion-inmueble.html" class="btn-add" aria-label="Agregar nueva propiedad">AGREGAR PROPIEDAD</a>
+                <a href="publicacion-inmueble.html" class="btn-add" aria-label="Agregar nueva propiedad">AGREGAR
+                    PROPIEDAD</a>
                 <a href="index.html" class="btn-tertiary">VOLVER AL INICIO</a>
             </div>
         </section>
@@ -194,7 +228,7 @@
         <div class="modal-content">
             <button class="modal-close" aria-label="Cerrar modal">&times;</button>
             <h2 class="modal-title">AGREGAR USUARIO</h2>
-            
+
             <div class="form-group">
                 <label for="user-type">TIPO DE USUARIO</label>
                 <select id="user-type" name="user-type" required>
@@ -208,7 +242,7 @@
             <form id="form-propietario" class="user-form" style="display: none;">
                 <fieldset class="form-fieldset">
                     <legend>DATOS PROPIETARIO</legend>
-                    
+
                     <div class="form-group">
                         <label for="prop-rut">RUT</label>
                         <input type="text" id="prop-rut" name="rut" placeholder="XX.XXX.XXX-X" required
@@ -262,7 +296,8 @@
                 </fieldset>
 
                 <div class="form-notice">
-                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active la cuenta.</p>
+                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active
+                        la cuenta.</p>
                 </div>
 
                 <button type="submit" class="btn-submit">REGISTRAR PROPIETARIO</button>
@@ -272,7 +307,7 @@
             <form id="form-gestor" class="user-form" style="display: none;">
                 <fieldset class="form-fieldset">
                     <legend>DATOS GESTOR INMOBILIARIO</legend>
-                    
+
                     <div class="form-group">
                         <label for="gest-rut">RUT</label>
                         <input type="text" id="gest-rut" name="rut" placeholder="XX.XXX.XXX-X" required
@@ -311,7 +346,8 @@
 
                     <div class="form-group">
                         <label for="gest-certificado">CERTIFICADO DE ANTECEDENTES</label>
-                        <input type="file" id="gest-certificado" name="certificado" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <input type="file" id="gest-certificado" name="certificado" accept=".pdf,.jpg,.jpeg,.png"
+                            required>
                     </div>
 
                     <div class="form-group">
@@ -326,7 +362,8 @@
                 </fieldset>
 
                 <div class="form-notice">
-                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active la cuenta.</p>
+                    <p><strong>Nota:</strong> El usuario quedará en estado PENDIENTE hasta que el Administrador active
+                        la cuenta.</p>
                 </div>
 
                 <button type="submit" class="btn-submit">REGISTRAR GESTOR</button>
@@ -373,7 +410,7 @@
             const tipo = e.target.value;
             formPropietario.style.display = 'none';
             formGestor.style.display = 'none';
-            
+
             if (tipo === 'propietario') {
                 formPropietario.style.display = 'block';
             } else if (tipo === 'gestor') {
@@ -386,12 +423,12 @@
             e.preventDefault();
             const password = document.getElementById('prop-password').value;
             const confirmPassword = document.getElementById('prop-confirm-password').value;
-            
+
             if (password !== confirmPassword) {
                 alert('Las contraseñas no coinciden');
                 return;
             }
-            
+
             // Aquí iría la lógica para guardar el usuario
             alert('Propietario registrado exitosamente. Queda en estado PENDIENTE.');
             closeModal();
@@ -402,12 +439,12 @@
             e.preventDefault();
             const password = document.getElementById('gest-password').value;
             const confirmPassword = document.getElementById('gest-confirm-password').value;
-            
+
             if (password !== confirmPassword) {
                 alert('Las contraseñas no coinciden');
                 return;
             }
-            
+
             // Aquí iría la lógica para guardar el usuario
             alert('Gestor inmobiliario registrado exitosamente. Queda en estado PENDIENTE.');
             closeModal();

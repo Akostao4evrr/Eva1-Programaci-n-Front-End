@@ -570,9 +570,126 @@ main {
     max-width: 1400px;
     margin: 0 auto;
     padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.dashboard-hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.dashboard-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+}
+
+.dashboard-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.metric-card {
+    border: 1px solid #000000;
+    padding: 28px;
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    background-color: #ffffff;
+}
+
+.metric-label {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.metric-value {
+    font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #000000;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.pie-chart {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #000000 0deg 240deg, #666666 240deg 360deg);
+    border: 1px solid #000000;
+    position: relative;
+}
+
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 1px;
+    background: #000000;
+    transform: rotate(240deg);
+    transform-origin: 0 50%;
+}
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.legend-available {
+    background-color: #000000;
+}
+
+.legend-sold {
+    background-color: #666666;
+}
+
+.legend-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #000000;
 }
 
 .dashboard-section {
+    width: 100%;
     margin-bottom: 80px;
 }
 
@@ -583,68 +700,59 @@ main {
 }
 
 .table-wrapper {
+    width: 100%;
     overflow-x: auto;
     margin-bottom: 20px;
     border: 1px solid #000000;
 }
 
-/* Dashboard Buttons Container */
-.dashboard-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.dashboard-buttons .btn-add,
-.dashboard-buttons .btn-tertiary {
-    flex: none;
-    display: inline-block;
-    text-align: center;
-}
-
-table {
+.dashboard-section table {
     width: 100%;
     border-collapse: collapse;
+    border-spacing: 0;
     background-color: #ffffff;
 }
 
-thead {
+.dashboard-section thead {
+    background-color: #f9f9f9;
+}
+
+.dashboard-section th,
+.dashboard-section td {
+    padding: 16px 14px;
     border-bottom: 1px solid #000000;
 }
 
-th {
-    padding: 16px;
+.dashboard-section th {
     text-align: left;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #000000;
-    background-color: #ffffff;
     border-right: 1px solid #000000;
+    background-color: #f9f9f9;
 }
 
-th:last-child {
+.dashboard-section th:last-child {
     border-right: none;
 }
 
-td {
-    padding: 16px;
+.dashboard-section td {
     font-size: 13px;
     border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
 }
 
-td:last-child {
+.dashboard-section td:last-child {
     border-right: none;
 }
 
-tbody tr:last-child td {
+.dashboard-section tbody tr:last-child td {
     border-bottom: none;
 }
 
-tbody tr:hover {
-    background-color: #f8f9fa;
+.dashboard-section tbody tr:hover {
+    background-color: #fafafa;
 }
 
 /* Estilo para columna de precios en tablas */
@@ -697,6 +805,23 @@ td.price-cell {
     cursor: pointer;
     transition: all 0.2s ease;
 }
+
+@media (max-width: 1024px) {
+    .dashboard-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-main {
+        padding: 40px 24px;
+    }
+
+    .dashboard-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .btn-add:hover {
     background-color: #ffffff;
@@ -866,7 +991,8 @@ td.price-cell {
         font-size: 12px;
     }
 
-    th, td {
+    th,
+    td {
         padding: 12px;
         font-size: 10px;
     }
@@ -1072,7 +1198,7 @@ td.price-cell {
     background-color: #e9ecef;
     border-color: #495057;
     transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .amenity-icon {
@@ -1351,7 +1477,7 @@ td.price-cell {
     background: #e9ecef;
     border-color: #495057;
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .amenidades-grid .checkbox-group label {
@@ -1425,6 +1551,7 @@ td.price-cell {
         transform: translateX(400px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -1538,7 +1665,8 @@ td.price-cell {
         font-size: 11px;
     }
 
-    th, td {
+    th,
+    td {
         padding: 10px 8px;
         font-size: 9px;
     }
